@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
 var messageRoutes = require('./routes/messages');
+var userRoutes = require('./routes/user');
 
 var app = express();
 mongoose.connect('localhost:27017/node-angular');
@@ -32,6 +33,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/message', messageRoutes); // important that this comes first
+app.use('/user', userRoutes); // important that this comes first
 app.use('/', appRoutes);
 
 
