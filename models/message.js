@@ -11,9 +11,10 @@ var schema = new Schema({
 //post: happens after some action
 // here: remove
 schema.post('remove', function(message){
-  User.findById(message.user, function(){
+  User.findById(message.user, function(err, user){
     user.messages.pull(message);
+    user.save();
   });
 });
 
-module.exports = mongoose.model('message', schema);
+module.exports = mongoose.model('Message', schema);
