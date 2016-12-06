@@ -14,6 +14,7 @@ import { LogoutComponent } from "./auth/logout.component";
 import { SigninComponent } from "./auth/signin.component";
 import { SignupComponent } from "./auth/signup.component";
 import { AuthService } from './auth/auth.service';
+import { ErrorComponent } from "./errors/error.component";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AuthService } from './auth/auth.service';
         HeaderComponent,
         LogoutComponent,
         SigninComponent,
-        SignupComponent
+        SignupComponent,
+        ErrorComponent
     ],
     imports: [BrowserModule,
       FormsModule,
